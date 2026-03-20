@@ -8,11 +8,11 @@ let package = Package(
         .library(name: "EdgeBase", targets: ["EdgeBase"]),
     ],
     dependencies: [
-        .package(path: "../core"),
+        .package(url: "https://github.com/edge-base/edgebase-swift-core", exact: "0.1.5"),
     ],
     targets: [
         .target(name: "EdgeBase", dependencies: [
-            .product(name: "EdgeBaseCore", package: "core"),
+            .product(name: "EdgeBaseCore", package: "edgebase-swift-core"),
         ], path: "Sources", resources: [
             .process("Resources"),
         ]),
