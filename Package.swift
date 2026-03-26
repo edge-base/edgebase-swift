@@ -8,12 +8,12 @@ let package = Package(
         .library(name: "EdgeBase", targets: ["EdgeBase"]),
     ],
     dependencies: [
-        .package(path: "../core"),
+        .package(url: "https://github.com/edge-base/edgebase-swift-core", exact: "0.2.6"),
         .package(url: "https://github.com/dyte-in/RealtimeKitCoreiOS.git", from: "1.6.1"),
     ],
     targets: [
         .target(name: "EdgeBase", dependencies: [
-            .product(name: "EdgeBaseCore", package: "core"),
+            .product(name: "EdgeBaseCore", package: "edgebase-swift-core"),
             .product(name: "RealtimeKit", package: "RealtimeKitCoreiOS"),
             .product(name: "RTKWebRTC", package: "RealtimeKitCoreiOS"),
         ], path: "Sources", resources: [
